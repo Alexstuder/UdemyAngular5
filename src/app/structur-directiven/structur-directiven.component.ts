@@ -7,7 +7,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class StructurDirectivenComponent implements OnInit {
 
+  length = 0;
   videos = ['Angular', 'Typescript', 'JavaScript', 'SQL'];
+  name = 'Angular Tutorial';
 
   constructor() {
   }
@@ -15,4 +17,8 @@ export class StructurDirectivenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  myClickhandler() {
+    this.length = this.length + 1;
+
+  }
 }

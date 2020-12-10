@@ -11,6 +11,34 @@
 <h2> *ngIf</h2>
 <ol>
   <li *ngFor="let video of videos;even as e">
-    <span *ngIf="e">{{video}}</span>
+    <span *ngIf="e; else other">{{video}}</span>
+    <ng-template #other>Not even</ng-template>
   </li>
 </ol>
+<h2>ngIf mit then</h2>
+<ol>
+  <li *ngFor="let video of videos;even as e">
+    <span *ngIf="e;then content else other">{{video}}</span>
+    <ng-template #content>{{video}}</ng-template>
+    <ng-template #other>Not even</ng-template>
+  </li>
+</ol>
+
+<h2>Switch</h2>
+<ol (click)="myClickhandler()">
+  <li [ngSwitch]="length">
+    <span *ngSwitchCase="1">Länge ist kurz</span>
+    <span *ngSwitchCase="3">Länge ist mittel</span>
+    <span *ngSwitchCase="5">Länge ist lange</span>
+    <span *ngSwitchDefault>Länge ist komisch</span>
+  </li>
+</ol>
+
+<h2>Pipes</h2>
+uppercase : {{name | uppercase}}
+<br>
+lowercase : {{name | lowercase}}
+<br>
+Json : {{name | json}}
+
+

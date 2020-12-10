@@ -1,0 +1,20 @@
+<h1>Bindings and Properties</h1>
+<p [class]="'green'">Class Binding : {{name}}</p><br>
+<p [class.green]="isGreenActive">Class Binding : {{name}}</p><br>
+<p [class.green]="isBrownActive">Class Binding : {{name}}</p><br>
+<h2>with ngClass</h2>
+<p [ngClass]="{'disabled':isDisabled, 'green':isGreenActive}">{{name}}</p>
+disabled:<p [ngClass]="{'disabled':false, 'green':isGreenActive}">{{name}}</p>
+<h2>Styles</h2>
+<p [style.color]="meineFarbe">{{name}}</p>
+<h2>With ngStyle</h2>
+<p [ngStyle]="{'color':meineFarbe,'font-size': '50px'}">{{name}}</p>
+display=none :<p [ngStyle]="{'color':meineFarbe,'font-size': '50px','display':'none'}">{{name}}</p>:<=nothing !
+
+
+<h2>Eigene Eigenschaften</h2>
+<p (click)="eigenschaftenClickHandler()">Hier sollst du drauf klicken ! : Also klick mich !</p>
+
+<h2>Eigene Event Emitter</h2>
+<p (click)="meinEventEmitterHandler()">Durch 5x hier draufklicken, wird in der übergeordneten Komponent(App) ein event
+  ausgelöst ! </p>

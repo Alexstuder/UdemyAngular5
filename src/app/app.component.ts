@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'UdemyAngular5';
 
+  meinEventHandler(): void {
+    window.alert('Der Event wurde in der darunterliegenden Komponent ausgelöst !');
+  }
 }
