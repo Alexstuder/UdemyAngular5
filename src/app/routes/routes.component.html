@@ -1,0 +1,42 @@
+<div>
+  <h2>Routes !</h2>
+  <p>Mit Routes wird die Struktur der ganzen Page definiert</p>
+  <p>Die Routes werde in der app.modul.ts definiert in einer constante</p>
+
+  <div>
+    const webSiteRoutes: Routes = [<br>
+    '{{ "{" }}'path: 'NavigationComponent', component: NavigationComponent '{{ "}" }}',<br>
+    '{{ "{" }}'path: 'RoutesComponent', component: RoutesComponent '{{ "}" }}',<br>
+    '{{ "{" }}'path: 'StructurDirectivenComponent', component: StructurDirectivenComponent '{{ "}" }}',<br>
+    '{{ "{" }}'path: 'BindingsAndPropertiesComponent', component: BindingsAndPropertiesComponent '{{ "}" }}',<br>
+    '{{ "{" }}'path: 'DependencyInjectionComponent', component: DependencyInjectionComponent '{{ "}" }}'<br>
+    ];<br>
+  </div>
+
+  <p>Diese wird dann in den Imports importiert :<br></p>
+  <div>
+    imports: [<br>
+    RouterModule.forRoot(webSiteRoutes),<br>
+    BrowserModule<br>
+    ],
+  </div>
+
+  <p>Die Links können dann im im Tag router-link </p>
+
+  <div>
+    <textarea id="input">
+      <div class="navigation">
+      <h2>Angular 5 Themen</h2>
+      <a routerLink="/StructurDirectivenComponent">StructureDirectivenComponent</a><br>
+      <a routerLink="/BindingsAndPropertiesComponent">Bindings and Properties Component</a><br>
+      <a routerLink="/DependencyInjectionComponent">Dependency Injection Component</a><br>
+      <a routerLink="/RoutesComponent">Routes Component</a><br>
+      </div>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </textarea>
+
+  </div>
+
+</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {VideoDBService} from '../shared/video-db.service';
 
 @Component({
   selector: 'app-dependency-injection',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DependencyInjectionComponent implements OnInit {
 
-  constructor() { }
+  videos = [];
+  injizierterString: string;
+
+  constructor(private datenbank: VideoDBService, @Inject('InjectString') injectString: string  ) {
+    this.videos = this.datenbank.getVideos();
+    console.log(injectString);
+
+    this.injizierterString = injectString;
+  }
 
   ngOnInit(): void {
   }

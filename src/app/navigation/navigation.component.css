@@ -1,0 +1,11 @@
+.navigation{
+  float: left;
+  width: 300px;
+  height: 400px;
+  background-color: lightgreen;
+}
+.content{
+  padding: 0px;
+  margin: 0px 0px 0px 310px;
+  background-color: lightyellow;
+}

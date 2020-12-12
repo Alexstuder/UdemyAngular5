@@ -1,1 +1,21 @@
-<p>dependency-injection works!</p>
+<h1>Dependency-injection!</h1>
+
+<div>
+  <h2>Unterschied zwischen NgOnInit() und constructor()</h2>
+  <p>Im constructor() werden die Module ,welche in app.modules.ts im provider angegebene sind importiert !</p>
+
+  <p>NgOnInit() wird bei der initialisierung der Seite aufgerufen und beinhaltet keine Input Argumente !</p>
+</div>
+
+<div>
+  <h2>Constructor Injection VideoDb wird als Service im Constructor injiziert</h2>
+
+  <p *ngFor="let video of videos">{{video}}</p>
+
+</div>
+<div>
+  <h2>String Injection : String wurde in der app.component.ts definiert und in diese componente injiziert </h2>
+
+  <p> Dieser String wurde injiziert : {{injizierterString}}</p>
+
+</div>
