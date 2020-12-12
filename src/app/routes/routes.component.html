@@ -4,6 +4,9 @@
   <p>Die Routes werde in der app.modul.ts definiert in einer constante</p>
 
   <div>
+    <div>
+    <textarea class="input" style="height: 130px">
+
     const webSiteRoutes: Routes = [<br>
     '{{ "{" }}'path: 'NavigationComponent', component: NavigationComponent '{{ "}" }}',<br>
     '{{ "{" }}'path: 'RoutesComponent', component: RoutesComponent '{{ "}" }}',<br>
@@ -11,20 +14,29 @@
     '{{ "{" }}'path: 'BindingsAndPropertiesComponent', component: BindingsAndPropertiesComponent '{{ "}" }}',<br>
     '{{ "{" }}'path: 'DependencyInjectionComponent', component: DependencyInjectionComponent '{{ "}" }}'<br>
     ];<br>
-  </div>
 
-  <p>Diese wird dann in den Imports importiert :<br></p>
-  <div>
+    </textarea>
+    </div>
+
+    <p>Diese wird dann in den Imports von app.modules.ts importiert :<br></p>
+    <div>
+    <textarea class="input" style="height: 90px">
+
     imports: [<br>
     RouterModule.forRoot(webSiteRoutes),<br>
     BrowserModule<br>
     ],
-  </div>
 
-  <p>Die Links können dann im im Tag router-link </p>
+    </textarea>
 
-  <div>
-    <textarea id="input">
+    </div>
+
+
+    <p>Die Links können dann in der entsprechenden Komponente im Tag router-link eingeblendet werden </p>
+
+    <div>
+    <textarea class="input" style="height: 180px">
+
       <div class="navigation">
       <h2>Angular 5 Themen</h2>
       <a routerLink="/StructurDirectivenComponent">StructureDirectivenComponent</a><br>
@@ -35,6 +47,7 @@
       <div class="content">
         <router-outlet></router-outlet>
       </div>
+
     </textarea>
 
   </div>

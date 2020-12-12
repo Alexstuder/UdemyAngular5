@@ -1,4 +1,6 @@
-#input{
-  width: 800px;
-  height: 200px;
+.input {
+  width: 720px;
+  resize: none;
+  overflow: hidden;
+  /* height: 200px;*/
 }
