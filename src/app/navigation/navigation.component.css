@@ -4,8 +4,12 @@
   height: 400px;
   background-color: lightgreen;
 }
-.content{
-  padding: 0px;
-  margin: 0px 0px 0px 310px;
+.content {
+  padding: 0;
+  margin: 0 0 0 310px;
   background-color: lightyellow;
+}
+
+.active {
+  color: red;
 }

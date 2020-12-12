@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-routes',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoutesComponent implements OnInit {
 
-  constructor() { }
+  snapshotLinkParameter: string;
+
+  constructor(private routes: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.snapshotLinkParameter = this.routes.snapshot.params['linkArgument'];
   }
 
 }

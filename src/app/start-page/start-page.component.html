@@ -1,0 +1,18 @@
+<p>Diese Seite wird als StartSeite dargestellt ,insbesonder die Route definition ist hierbei interessatn !</p>
+<br>
+<textarea [ngStyle]="{'width':'380px','height':'25px', 'resize': 'none','overflow': 'hidden'}">
+  {path: '', component: StartPageComponent },
+</textarea>
+<br>
+
+<p>mit nachstehendem Attribut im code : routerLinkActive, wird die farbe des aktivierten links definiert</p>
+
+<p>Code im html template</p>
+<textarea [ngStyle]="{'width':'850px','height':'35px', 'resize': 'none','overflow': 'hidden'}">
+   <a [routerLink]="['/RoutesComponent', myLinkParameter]" routerLinkActive="active">Routes Component</a><br>
+</textarea>
+<p>Definiert über die classe im css </p>
+<textarea [ngStyle]="{'width':'200px','height':'35px', 'resize': 'none','overflow': 'hidden'}">
+  .active{
+  color: red;
+</textarea>
