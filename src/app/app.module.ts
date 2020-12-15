@@ -6,10 +6,12 @@ import {BindingsAndPropertiesComponent} from './bindings-and-properties/bindings
 import {DependencyInjectionComponent} from './dependency-injection/dependency-injection.component';
 import {VideoDBService} from './shared/video-db.service';
 import {RouterModule, Routes} from '@angular/router';
-import {NavigationComponent} from './navigation/navigation.component';
-import {RoutesComponent} from './routes/routes.component';
-import {ErrorPageComponent} from './error-page/error-page.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { RoutesComponent } from './routes/routes.component';
+import {TemplateDrivenFormsComponent} from './template-driven-forms/template-driven-forms.component';
 import {StartPageComponent} from './start-page/start-page.component';
+import {ErrorPageComponent} from './error-page/error-page.component';
+import {FormsModule} from '@angular/forms';
 
 const webSiteRoutes: Routes = [
   {path: 'NavigationComponent', component: NavigationComponent},
@@ -18,6 +20,7 @@ const webSiteRoutes: Routes = [
   {path: 'StructurDirectivenComponent', component: StructurDirectivenComponent},
   {path: 'BindingsAndPropertiesComponent', component: BindingsAndPropertiesComponent},
   {path: 'DependencyInjectionComponent', component: DependencyInjectionComponent},
+  {path: 'TemplateDrivenFormsComponent', component: TemplateDrivenFormsComponent},
   {path: '**', component: ErrorPageComponent}
 ];
 
@@ -29,12 +32,15 @@ const webSiteRoutes: Routes = [
     DependencyInjectionComponent,
     NavigationComponent,
     RoutesComponent,
+    TemplateDrivenFormsComponent,
+    RoutesComponent,
     ErrorPageComponent,
     StartPageComponent
   ],
   imports: [
     RouterModule.forRoot(webSiteRoutes),
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [VideoDBService, {provide : 'InjectString', useValue: '-- das hier ist der Injizierter Wert --'}],
   bootstrap: [AppComponent]

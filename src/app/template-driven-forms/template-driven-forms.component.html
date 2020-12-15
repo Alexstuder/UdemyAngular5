@@ -1,0 +1,20 @@
+<h1>Template Driven Forms !</h1>
+
+
+
+<p>
+  Template-driven forms make use of the "FormsModule", while reactive forms are based on "ReactiveFormsModule". Template-driven forms are asynchronous in nature, whereas Reactive forms are mostly synchronous.
+</p>
+
+<form #meinFormular="ngForm" (ngSubmit)='login(meinFormular.value)'>
+  <label>Name :</label>
+  <input type="text" name="name" required maxlength="8" ngModel><br>
+  <label>eMail :</label>
+  <input type="text" name="eMail" required email ngModel><br>
+  <label>Passwort :</label>
+  <input type="password" name="password" required minlength="3" pattern=".*\d.*" ngModel><br>
+  <button type="submit">Login</button>
+</form>
+<br><br><br>
+<hr>
+<div> Name  : </div>
