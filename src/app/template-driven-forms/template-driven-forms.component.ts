@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-template-driven-forms',
@@ -7,15 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenFormsComponent implements OnInit {
 
-  inputName: string ;
+  inputNachname: string;
+  inputVorname: string;
+  inputEmail: string;
   inputPassword: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  login(value: any) {
+  login(value: any): void {
     console.log(value);
+    this.inputNachname = value['groupName'] ['nachname'];
+    this.inputVorname = value['groupName'] ['vorname'];
+    this.inputEmail = value['eMail'];
+    this.inputPassword = value['password'];
   }
 }

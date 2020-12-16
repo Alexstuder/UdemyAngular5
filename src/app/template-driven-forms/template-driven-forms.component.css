@@ -1,19 +1,19 @@
 .ng-dirty{
-  background-color: beige;
+  /*background-color: beige;*/
 }
 .ng-pristine{
-  background-color: red;
+  /* background-color: red;*/
 }
 .ng-valid {
-  background-color: green;
+  /*background-color: green;*/
 }
 .ng-touched {
-  background-color: white;
+  /*background-color: white;*/
 }
 .ng-untouched {
-  background-color: chocolate;
+  /*background-color: chocolate;*/
 }
 .ng-pending {
   /*Asynchrone  verarbeitung*/
-  background-color: aqua;
+  /*background-color: aqua;*/
 }
