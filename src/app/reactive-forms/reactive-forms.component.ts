@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 // noinspection DuplicatedCode
 @Component({
@@ -10,10 +10,10 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class ReactiveFormsComponent implements OnInit {
   loginForm = new FormGroup({
     groupName: new FormGroup({
-      nachname: new FormControl(),
-      vorname: new FormControl()
+      nachname: new FormControl('DefaultName'),
+      vorname: new FormControl(null, Validators.min(10))
     }),
-    eMail: new FormControl(),
+    eMail: new FormControl(null, [Validators.email, Validators.required]),
     password: new FormControl()
   });
 
@@ -41,7 +41,12 @@ export class ReactiveFormsComponent implements OnInit {
     } else {
       this.status = 'false';
     }
+  }
 
-
+  resetPwd(): void {
+    this.loginForm.controls.password.reset();
+  }
+  resetAll(): void {
+    this.loginForm.reset();
   }
 }

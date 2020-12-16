@@ -18,7 +18,10 @@
   <label>Passwort :</label>
   <input type="password" name="password" required minlength="3" pattern=".*\d.*" formControlName="password"><br>
   <button type="submit">Login</button>
+  <button type="button" (click)="resetPwd()">resetPwd</button>
+  <button type="button" (click)="resetAll()">resetAll</button>
 </form>
+
 <br><br><br>
 <hr>
 <div> Name :{{inputNachname}}</div><br>
