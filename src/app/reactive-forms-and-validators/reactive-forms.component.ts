@@ -22,6 +22,7 @@ export class ReactiveFormsComponent implements OnInit {
   inputEmail: string;
   inputPassword: string;
   status: string;
+  statusEmail: string;
 
   constructor() {
   }
@@ -35,6 +36,12 @@ export class ReactiveFormsComponent implements OnInit {
     this.inputNachname = this.loginForm.value.groupName.nachname;
     this.inputVorname = this.loginForm.value.groupName.vorname;
     this.inputEmail = this.loginForm.value.eMail;
+
+    if (this.loginForm.controls.eMail.valid){
+      this.statusEmail = 'eMail has a valid format';
+    } else {
+      this.statusEmail = 'Not a valid eMail format';
+    }
     this.inputPassword = this.loginForm.value.password;
     if (this.loginForm.valid) {
       this.status = 'valid';

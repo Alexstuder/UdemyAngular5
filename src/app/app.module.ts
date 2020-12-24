@@ -12,7 +12,7 @@ import {TemplateDrivenFormsComponent} from './template-driven-forms/template-dri
 import {StartPageComponent} from './start-page/start-page.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ReactiveFormsComponent} from './reactive-forms/reactive-forms.component';
+import {ReactiveFormsComponent} from './reactive-forms-and-validators/reactive-forms.component';
 
 const webSiteRoutes: Routes = [
   {path: 'NavigationComponent', component: NavigationComponent},
