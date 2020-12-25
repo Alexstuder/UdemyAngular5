@@ -17,6 +17,14 @@ export class ReactiveFormsComponent implements OnInit {
     password: new FormControl()
   });
 
+  inputNachname: string;
+  inputVorname: string;
+  inputEmail: string;
+  inputPassword: string;
+  status: string;
+  statusEmail: string;
+  statusNachname: string;
+
   static myValidator(control: FormControl): { [key: string]: any } {
     if (control.value == 'Studer') {
       console.log('myValidator : Studer erkannt');
@@ -26,14 +34,6 @@ export class ReactiveFormsComponent implements OnInit {
       return null;
     }
   }
-
-  inputNachname: string;
-  inputVorname: string;
-  inputEmail: string;
-  inputPassword: string;
-  status: string;
-  statusEmail: string;
-  statusNachname: string;
 
   constructor() {
   }
@@ -48,6 +48,7 @@ export class ReactiveFormsComponent implements OnInit {
     this.inputVorname = this.loginForm.value.groupName.vorname;
     this.inputEmail = this.loginForm.value.eMail;
 
+    // @ts-ignore
     if (this.loginForm.controls.groupName.controls.nachname.status === 'INVALID') {
       this.statusNachname = 'NichtValid ! Nachname beinhaltet Studer!';
       console.log('Nicht Valid ! : Studer');
