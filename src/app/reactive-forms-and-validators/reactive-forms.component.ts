@@ -10,12 +10,22 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class ReactiveFormsComponent implements OnInit {
   loginForm = new FormGroup({
     groupName: new FormGroup({
-      nachname: new FormControl('DefaultName'),
-      vorname: new FormControl(null, Validators.min(10))
+      nachname: new FormControl('DefaultName', ReactiveFormsComponent.myValidator),
+      vorname: new FormControl(null, Validators.min(2))
     }),
-    eMail: new FormControl(null, [Validators.email, Validators.required]),
+    eMail: new FormControl(null, [Validators.email, Validators.required]), /* übergabe der funktion nicht aufruf*/
     password: new FormControl()
   });
+
+  static myValidator(control: FormControl): { [key: string]: any } {
+    if (control.value == 'Studer') {
+      console.log('myValidator : Studer erkannt');
+      return {name: {valid: false}};
+    } else {
+      console.log('myValidator : kein Studer erkannt');
+      return null;
+    }
+  }
 
   inputNachname: string;
   inputVorname: string;
@@ -23,6 +33,7 @@ export class ReactiveFormsComponent implements OnInit {
   inputPassword: string;
   status: string;
   statusEmail: string;
+  statusNachname: string;
 
   constructor() {
   }
@@ -37,7 +48,14 @@ export class ReactiveFormsComponent implements OnInit {
     this.inputVorname = this.loginForm.value.groupName.vorname;
     this.inputEmail = this.loginForm.value.eMail;
 
-    if (this.loginForm.controls.eMail.valid){
+    if (this.loginForm.controls.groupName.controls.nachname.status === 'INVALID') {
+      this.statusNachname = 'NichtValid ! Nachname beinhaltet Studer!';
+      console.log('Nicht Valid ! : Studer');
+    } else {
+      this.statusNachname = 'Valid ! Nachname beinhaltet nicht Studer!';
+      console.log('Valid : nicht Studer');
+    }
+    if (this.loginForm.controls.eMail.valid) {
       this.statusEmail = 'eMail has a valid format';
     } else {
       this.statusEmail = 'Not a valid eMail format';
@@ -53,6 +71,7 @@ export class ReactiveFormsComponent implements OnInit {
   resetPwd(): void {
     this.loginForm.controls.password.reset();
   }
+
   resetAll(): void {
     this.loginForm.reset();
   }
