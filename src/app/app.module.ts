@@ -13,6 +13,7 @@ import {StartPageComponent} from './start-page/start-page.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ReactiveFormsComponent} from './reactive-forms-and-validators/reactive-forms.component';
+import {MeinEigenesModulModule} from "./EigenesModul/mein-eigenes-modul/mein-eigenes-modul.module";
 
 const webSiteRoutes: Routes = [
   {path: 'NavigationComponent', component: NavigationComponent},
@@ -38,7 +39,8 @@ const webSiteRoutes: Routes = [
     RoutesComponent,
     ErrorPageComponent,
     StartPageComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    MeinEigenesModulModule
   ],
   imports: [
     RouterModule.forRoot(webSiteRoutes),
