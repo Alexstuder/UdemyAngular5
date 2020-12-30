@@ -13,7 +13,10 @@ import {StartPageComponent} from './start-page/start-page.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ReactiveFormsComponent} from './reactive-forms-and-validators/reactive-forms.component';
-import {MeinEigenesModulModule} from "./EigenesModul/mein-eigenes-modul/mein-eigenes-modul.module";
+import { AttributDirektivenComponent } from './attribut-direktiven/attribut-direktiven.component';
+import { FlashyDirective } from './direktiven/flashy.directive';
+import { MouseHooverDirective } from './direktiven/mouse-hoover.directive';
+import { ParameterInjectionDirective } from './direktiven/parameter-injection.directive';
 
 const webSiteRoutes: Routes = [
   {path: 'NavigationComponent', component: NavigationComponent},
@@ -24,6 +27,7 @@ const webSiteRoutes: Routes = [
   {path: 'DependencyInjectionComponent', component: DependencyInjectionComponent},
   {path: 'TemplateDrivenFormsComponent', component: TemplateDrivenFormsComponent},
   {path: 'ReactiveFormsComponent', component: ReactiveFormsComponent},
+  {path: 'AttributDirektivenComponent', component: AttributDirektivenComponent},
   {path: '**', component: ErrorPageComponent}
 ];
 
@@ -40,7 +44,10 @@ const webSiteRoutes: Routes = [
     ErrorPageComponent,
     StartPageComponent,
     ReactiveFormsComponent,
-    MeinEigenesModulModule
+    AttributDirektivenComponent,
+    FlashyDirective,
+    MouseHooverDirective,
+    ParameterInjectionDirective
   ],
   imports: [
     RouterModule.forRoot(webSiteRoutes),
